@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLAUW</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+  </head>
+  <script type="text/javascript">
+
+    WebFontConfig = {
+      custom: {
+        families: ['blauw'],
+        urls: ['assets/fonts/blauw/blauw.css']
+      }
+    };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+
+  </script>
+  <body>
+
+    <header>
+      <div class="banner">
+        <a href="/"><div class="ster"></div></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="lightblue center">
+        <h2 class="formtitle">Spring & win</h2>
+        <div class="position deel">
+
+        <form class="form" action="index.php?page=succes" method="post" enctype="multipart/form-data">
+
+          <div class="input-group">
+            <label for="name">Naam vereniging:</label><br/><br/>
+            <p class="error"></p>
+            <input type="text" name="name" placeholder="De blauwe blauwbaarden " required><br/><br/>
+          </div>
+
+          <div class="input-group">
+            <label for="email">E-mail:</label><br/><br/>
+            <p class="error"></p>
+            <input type="email" name="email" placeholder="deblauweblauwbaarden@blauw.be" required><br/><br/>
+          </div>
+
+          <div class="input-group">
+            <label for="cafe">Stamcafé:</label><br/><br/>
+            <p class="error"></p>
+            <input type="text" name="cafe" placeholder="De blauwen hoek" required><br/><br/>
+          </div>
+
+          <div class="input-group">
+            <label for="ideaal">Ideale namiddag:</label><br/><br/>
+            <p class="error"></p>
+            <textarea name="ideaal" rows="8" cols="40" required></textarea><br/><br/>
+          </div>
+
+          <div class="input-group">
+            <div class="upload">
+              <div>
+                <label for="artwork_filename">Upload foto</label><br/><br/>
+                <input type="file" name="artwork_filename"><br><br>
+              </div>
+              <div class="pijl"></div>
+            </div>
+          </div>
+
+        <input class="wedstrijdbutton" type="submit" value="Wij doen mee!">
+
+        </form>
+        <div class="beachbabe"></div>
+      </div>
+      </section>
+
+    </main>
+
+    <footer>
+<div class="ster minder"></div>
+      <section class="footer-wrapper minder">
+        <h2>BLAUW</h2>
+        <p class="contact">
+           Brouwerij Omer Vander Ghinste<br/>
+Kwabrugstraat 5<br/>
+8500 Bellegem<br/>
+056 23 51 71
+        </p>
+      </section>
+
+    </footer>
+  <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

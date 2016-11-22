@@ -1,0 +1,563 @@
+@import 'reset.css';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: helvetica;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  width: 100%;
+  background-color: #003561;
+  height: 6.5rem;
+  display: flex;
+  justify-content: center;
+  z-index: 9;
+}
+
+.ster {
+  background-image: url('../assets/svg/ster.svg');
+  background-size: 100%;
+  width: 8.5rem;
+  height: 8.5rem;
+  z-index: 99999;
+}
+
+.stone {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/img/bg.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.circle {
+  background-color: #0093d5;
+  width: 52rem;
+  height: 52rem;
+  border-radius: 26rem;
+  margin-top: 10rem;
+
+  animation-name: circle;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes circle {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.left {
+  background-image: url('../assets/img/packshotleft.png');
+  width: 21.4rem;
+  height: 65.7rem;
+  position: absolute;
+  margin-top: -16rem;
+  margin-left: 24.1rem;
+  opacity: 0;
+  z-index: 1;
+
+  animation-name: left;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes left {
+
+  0% {
+    margin-left: 14.1rem;
+    opacity: 0;
+  }
+
+  50% {
+    margin-left: 1rem;
+  }
+
+  100% {
+    margin-left: 2.7rem;
+    opacity: 1;
+  }
+}
+
+.middle {
+  background-image: url('../assets/img/packshot.png');
+  width: 16.7rem;
+  height: 61.9rem;
+  position: absolute;
+  margin-left: 17.6rem;
+  margin-top: -10rem;
+  z-index: 2;
+
+  animation-name: middle;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes middle {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.right {
+  background-image: url('../assets/img/packshotright.png');
+  width: 17.1rem;
+  height: 57.4rem;
+  position: absolute;
+  margin-left: 26rem;
+  margin-top: -7rem;
+  z-index: 1;
+
+  animation-name: right;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes right {
+
+  0% {
+    margin-left: 14.1rem;
+    opacity: 0;
+  }
+
+  50% {
+    margin-left: 27.3rem;
+  }
+
+  100% {
+    margin-left: 26rem;
+    opacity: 1;
+  }
+}
+
+.palmtree {
+  background-image: url('../assets/img/palmtree.png');
+  width: 25.1rem;
+  height: 40.8rem;
+  z-index: 0;
+  position: absolute;
+  margin-left: 33rem;
+  margin-top: 5rem;
+
+  animation-name: palm;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes palm {
+
+  0% {
+    margin-left: 25rem;
+    opacity: 0;
+  }
+
+  50% {
+    margin-left: 34.7rem;
+  }
+
+  100% {
+    margin-left: 33rem;
+    opacity: 1;
+  }
+}
+
+.swimmer {
+  background-image: url('../assets/img/diver.png');
+  width: 15.8rem;
+  height: 22.5rem;
+  position: absolute;
+  margin-left: 50rem;
+  opacity: .0;
+
+  animation-name: swimmer;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+@keyframes swimmer {
+
+  0% {
+    margin-left: 25rem;
+    opacity: 0;
+  }
+
+  50% {
+    margin-left: 51.7rem;
+  }
+
+  100% {
+    margin-left: 50rem;
+    opacity: 1;
+  }
+}
+
+.content {
+  width: 96rem;
+  border: 1px solid #0093d5;
+}
+
+.waves {
+  width: 100vw;
+  height: 5.3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-image: url('../assets/img/wave.png');
+  z-index: 999999999;
+  margin-top: -5.3rem;
+}
+
+.island {
+  background-image: url('../assets/img/collage3.png');
+  width: 29.1rem;
+  height: 33rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10rem;
+}
+
+.darkblue {
+  background-color: #003561;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.position {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 96rem;
+}
+
+.vijftig {
+  width: 96rem;
+  font-family: blauw;
+}
+
+h2 {
+  font-size: 4.5rem;
+  font-family: blauw;
+}
+
+.vandaagtitel {
+  font-family: blauw;
+}
+
+.text {
+  font-size: 2.2rem;
+  line-height: 3.7rem;
+  width: 45rem;
+  margin-top: 2rem;
+}
+
+.collage {
+  background-image: url('../assets/img/collage.png');
+  width: 48.6rem;
+  height: 53.5rem;
+}
+
+.nu {
+  background-color: #0093d5;
+  background-image: url('../assets/img/snor.png');
+  width: 100vw;
+  padding: 5rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  font-size: 3.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: blauw;
+}
+
+.info {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 30rem;
+}
+
+.deel {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.size {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-size: 100%;
+}
+
+.natuurlijk-icon {
+  background-image: url('../assets/svg/natuurlijk.svg');
+}
+
+.kalender-icon {
+  background-image: url('../assets/svg/kalender.svg');
+}
+
+.beer {
+  background-image: url('../assets/img/beer.png');
+  width: 29.6rem;
+  height: 50.8rem;
+}
+
+.flesje-icon {
+  background-image: url('../assets/svg/flesje.svg');
+}
+
+.percent-icon {
+  background-image: url('../assets/svg/percent.svg');
+}
+
+.temp-icon {
+  background-image: url('../assets/svg/temp.svg');
+}
+
+.spring {
+  background-color: #003561;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 96rem;
+  padding: 5rem;
+}
+
+.uitleg {
+  margin-top: 5rem;
+  font-size: 2.3rem;
+  line-height: 4rem;
+  width: 80rem;
+}
+
+.bottom-wrapper {
+  margin-top: 7rem;
+  width: 80rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-wrapper {
+  margin-top: -1rem;
+  width: 96rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.collage2 {
+  background-image: url('../assets/img/collage2.png');
+  width: 45rem;
+  height: 41.4rem;
+}
+
+.button {
+  background-color: #0093d5;
+  padding: 1rem;
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  transition: .5s;
+  font-family: blauw;
+}
+
+.button:hover {
+  background-color: white;
+  color: #0093d5;
+}
+
+footer {
+  background-color: #0093d5;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.minder {
+  margin-top: -2rem;
+}
+
+.contact {
+  text-align: right;
+  font-size: 2.3rem;
+  line-height: 3rem;
+}
+
+span {
+  background-color: #0093d5;
+}
+
+.druppel {
+  background-image: url('../assets/svg/druppel.svg');
+  background-size: 100%;
+  width: 3rem;
+  height: 4.5rem;
+}
+
+.winbutton {
+  background-color: #003561;
+  width: 9rem;
+  padding: 1rem;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: .5s;
+  transform: rotate(-15deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: blauw;
+}
+
+.lightblue {
+  width: 100vw;
+  background-color: #0093d5;
+  z-index: 0;
+  padding: 5rem;
+}
+
+.formtitle {
+  width: 96rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 2.3rem;
+}
+
+input {
+  width: 25rem;
+}
+
+.beachbabe {
+  background-image: url('../assets/img/collage5.png');
+  width: 42.7rem;
+  height: 47rem;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+}
+
+.pijl {
+  background-image: url('../assets/svg/pijl.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 8.7rem;
+  height: 12.5rem;
+}
+
+.wedstrijdbutton {
+  background-color: white;
+  color: #003561;
+  font-family: blauw;
+  padding: 1rem;
+  font-size: 2.5rem;
+  border: none;
+  transition: .5s;
+}
+
+.wedstrijdbutton:hover {
+  background-color: #003561;
+  color: white;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: #ff7f7f;
+  padding-bottom: .5rem;
+}
+
+.thx {
+  text-align: center;
+  line-height: 110%;
+}
+
+.winnaarsinfo {
+  font-size: 2.5rem;
+  padding: 5rem;
+}
+
+.succes {
+  width: 96rem;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backbutton {
+  background-color: #003561;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-family: blauw;
+  transition: .5s;
+}
+
+.backbutton:hover {
+  background-color: white;
+  color: #003561;
+}

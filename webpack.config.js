@@ -1,0 +1,113 @@
+const ExtractTextPlugin = require(`extract-text-webpack-plugin`);
+const HTMLWebpackPlugin = require(`html-webpack-plugin`);
+const LoaderOptionsPlugin = require(`webpack`).LoaderOptionsPlugin;
+const HotModuleReplacementPlugin = require(`webpack`).HotModuleReplacementPlugin;
+const CopyWebpackPlugin = require(`copy-webpack-plugin`);
+
+const path = require('path');
+
+const port = 3000;
+
+const extractHTML = new HTMLWebpackPlugin({
+  template: `./src/index.html`,
+  filename: `index.html`
+});
+
+const postCSSOptions = new LoaderOptionsPlugin({
+  options: {
+    postcss: [
+      require(`stylelint`),
+      require(`postcss-reporter`)({clearMessages:true}),
+      require(`postcss-cssnext`)
+    ]
+  }
+});
+
+const copy = new CopyWebpackPlugin([{
+  from:`./src/assets`,
+  to:`assets/`
+}], {
+  ignore:[
+    `.DS_Store`
+  ]
+});
+
+const config = {
+
+  entry: [
+    `./src/css/style.css`
+  ],
+
+  output: {
+    path: path.resolve(__dirname,`dist`),
+    filename: `js/script.[hash].js`,
+    //publicPath: `laurens.vandevyver/20152016/frd3/`
+    publicPath: `/`
+  },
+
+  devServer:{
+    contentBase: `./src`,
+    hot:true,
+    port
+  },
+
+  module: {
+
+    rules: [
+      {
+        test: /\.css$/,
+        loaders: [
+          `style`,
+          `css?importLoaders=1`,
+          `postcss`
+        ]
+      },
+      {
+        test: /\.html$/,
+        loaders: `html`
+      },
+      {
+        test: /\.(svg|png|jpe?g)$/,
+        loaders: `url`,
+        query: {
+          limit: 1000,
+          context: `./src`,
+          name: `[path][name].[ext]`
+        }
+      }
+    ]
+
+  },
+
+  plugins: [
+    new HotModuleReplacementPlugin(),
+    //extractCSS,
+    extractHTML,
+    postCSSOptions,
+    copy
+  ]
+
+}
+
+if(process.env.NODE_ENV===`production`){
+  const extractCSS = new ExtractTextPlugin(`css/style.css`);
+  config.module.rules.shift();
+
+  config.module.rules.push({
+    test: /\.css$/,
+    loaders: extractCSS.extract([`css`, `postcss`])
+  });
+
+  config.module.rules.push({
+    test: /\.(svg|png|jpe?g|gif)$/,
+    loaders: `image-webpack`,
+    enforce:`pre`
+  });
+
+  config.plugins.shift();
+  config.plugins.push(extractCSS);
+}else{
+  config.entry.push(`./src/index.html`);
+}
+
+module.exports = config;
